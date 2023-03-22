@@ -145,6 +145,106 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/my-second-mr-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/22/my-second-mr-blog/" class="post-title-link" itemprop="url">MRTK学习（二）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-22 21:22:15" itemprop="dateCreated datePublished" datetime="2023-03-22T21:22:15+08:00">2023-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-23 00:15:52" itemprop="dateModified" datetime="2023-03-23T00:15:52+08:00">2023-03-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="MRTK学习（二）"><a href="#MRTK学习（二）" class="headerlink" title="MRTK学习（二）"></a>MRTK学习（二）</h2><h3 id="一、-放置游戏对象并设置可见性"><a href="#一、-放置游戏对象并设置可见性" class="headerlink" title="一、 放置游戏对象并设置可见性"></a>一、 放置游戏对象并设置可见性</h3><h6 id="（教程：练习-放置游戏对象并设置可见性-Training-Microsoft-Learn）"><a href="#（教程：练习-放置游戏对象并设置可见性-Training-Microsoft-Learn）" class="headerlink" title="（教程：练习 - 放置游戏对象并设置可见性 - Training | Microsoft Learn）"></a>（教程：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/training/modules/place-scene-objects/4-3-exercise-position-game-objects-set-visibility">练习 - 放置游戏对象并设置可见性 - Training | Microsoft Learn</a>）</h6><h4 id="1-导入Unity包"><a href="#1-导入Unity包" class="headerlink" title="1.导入Unity包"></a>1.导入Unity包</h4><p>此处先下载以下 <strong>Unity 自定义包</strong><a target="_blank" rel="noopener" href="https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.5.0/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.5.0.1.unitypackage">MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.5.0.1.unitypackage</a>。</p>
+<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222128554.png" alt="image-20230322212821510" style="zoom: 67%;" />
+
+
+
+<h4 id="2-创建父对象"><a href="#2-创建父对象" class="headerlink" title="2.创建父对象"></a>2.创建父对象</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222140962.png" alt="image-20230322214017939"></p>
+<h4 id="3-添加教程预制件"><a href="#3-添加教程预制件" class="headerlink" title="3.添加教程预制件"></a>3.添加教程预制件</h4><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222143389.png" alt="image-20230322214346312" style="zoom:80%;" />
+
+
+
+<h3 id="二、使用集合组织和布局对象"><a href="#二、使用集合组织和布局对象" class="headerlink" title="二、使用集合组织和布局对象"></a>二、使用集合组织和布局对象</h3><p>​		在“<strong>集合</strong>”中排列对象是混合现实工具包提供的另一项实用功能。 对象集合是一个脚本，用于帮助以预定义的 3 维形状为对象数组布局。 它支持各种表面样式，包括平面、圆柱体、球体和径向。 因为它支持 Unity 中的任何对象，所以它可以用来对 2D 和 3D 对象进行布局。 </p>
+<h4 id="1-网格对象集合"><a href="#1-网格对象集合" class="headerlink" title="1.网格对象集合"></a>1.网格对象集合</h4><p>​		<strong>可以在一组子对象上使用此类型的集合</strong>，以使用一些布局参数来组织它们。 网格对象收集可帮助快速创建控制面板或一组 Prefab 或对象。</p>
+<h4 id="2-散点对象集合"><a href="#2-散点对象集合" class="headerlink" title="2.散点对象集合"></a>2.散点对象集合</h4><p>​		此类型的集合只是在<strong>半径内随机布局</strong>的一组子对象。</p>
+<h4 id="3-图块网格对象集合"><a href="#3-图块网格对象集合" class="headerlink" title="3.图块网格对象集合"></a>3.图块网格对象集合</h4><p>​		可以利用这种类型的集合在<strong>基本网格布局中放置大小一致的游戏对象</strong>。</p>
+<h4 id="4-练习使用集合组织和布局对象"><a href="#4-练习使用集合组织和布局对象" class="headerlink" title="4.练习使用集合组织和布局对象"></a>4.练习使用集合组织和布局对象</h4><p>​		添加了<strong>GridObjectCollection</strong>组件，并Update Collection。</p>
+<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222154146.png" alt="image-20230322215445037" style="zoom:80%;" />
+
+
+
+
+
+<h3 id="三、使用求解器创建智能对象放置"><a href="#三、使用求解器创建智能对象放置" class="headerlink" title="三、使用求解器创建智能对象放置"></a>三、使用求解器创建智能对象放置</h3><h4 id="1-解释："><a href="#1-解释：" class="headerlink" title="1.解释："></a>1.解释：</h4><p>​		如果最重要的选项出现在周围的菜单中，而不是固定在某个位置。混合现实工具包提供了此功能，称为<strong>求解器</strong>。 求解器使用预定义的算法计算对象的位置和方向。 求解器提供了各种行为，用于将对象附加到其他对象或系统。 例如，求解器可以是每次移动时显示的跟随对象（基于相机）。</p>
+<p>​		<strong>方向指示器</strong>是另一种类型的求解器。 如果想帮助跟随组件将其定向到空间中对象的所需方向，则可以使用该求解器。</p>
+<p>​		另一个需要了解的是<strong>点击以放置组件</strong>，它可以帮助将对象放置在表面上。 如果要将对象放置在空间网格上，此组件非常有用。</p>
+<p>​		MRTK 的求解器位于 <strong>MRTK SDK 文件夹</strong>中。 </p>
+<h4 id="2-练习使用方向指示器求解器"><a href="#2-练习使用方向指示器求解器" class="headerlink" title="2.练习使用方向指示器求解器"></a>2.练习使用方向指示器求解器</h4><h5 id="1-添加的组件："><a href="#1-添加的组件：" class="headerlink" title="1.添加的组件："></a>1.添加的组件：</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/mixed-reality/mrtk-unity/mrtk2/features/ux-building-blocks/solvers/solver?view=mrtkunity-2022-05#directionalindicator"><code>DirectionalIndicator</code></a>：确定作为方向指示器的对象的位置和方向。 从 SolverHandler 跟踪目标的参照点来看，此指示器将面向提供的 DirectionalTarget。</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222208775.png" style="zoom:80%;" />
+
+
+
+<h5 id="2-进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。"><a href="#2-进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。" class="headerlink" title="2.进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。"></a>2.进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。</h5><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222211708.png" alt="image-20230322221106615" style="zoom:80%;" />
+
+
+
+<h4 id="3-练习使用点击以放置求解器"><a href="#3-练习使用点击以放置求解器" class="headerlink" title="3.练习使用点击以放置求解器"></a>3.练习使用点击以放置求解器</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/my-first-mr-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -170,7 +270,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-03-22 19:29:59 / 修改时间：21:19:18" itemprop="dateCreated datePublished" datetime="2023-03-22T19:29:59+08:00">2023-03-22</time>
+              <time title="创建时间：2023-03-22 19:29:59 / 修改时间：21:21:10" itemprop="dateCreated datePublished" datetime="2023-03-22T19:29:59+08:00">2023-03-22</time>
             </span>
 
           
@@ -460,7 +560,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
