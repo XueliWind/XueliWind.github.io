@@ -145,6 +145,103 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/my-thrid-mr-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/23/my-thrid-mr-blog/" class="post-title-link" itemprop="url">MRTK学习（三）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-23 11:40:42 / 修改时间：16:59:22" itemprop="dateCreated datePublished" datetime="2023-03-23T11:40:42+08:00">2023-03-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="MRTK学习（三）"><a href="#MRTK学习（三）" class="headerlink" title="MRTK学习（三）"></a>MRTK学习（三）</h2><h3 id="一、-按钮和动态菜单面板"><a href="#一、-按钮和动态菜单面板" class="headerlink" title="一、 按钮和动态菜单面板"></a>一、 按钮和动态菜单面板</h3><h4 id="1-UI按钮"><a href="#1-UI按钮" class="headerlink" title="1.UI按钮"></a>1.UI按钮</h4><p><strong>按钮</strong>可帮助用户触发即时操作。 它是 MRTK 提供的基础组件之一。 根据具体情况，可以使用各种类型的按钮预制。 按钮基于<strong>可交互脚本组件</strong>，在不同的交互式图面上提供平滑的 UI 控件。</p>
+<h4 id="2-UI菜单"><a href="#2-UI菜单" class="headerlink" title="2.UI菜单"></a>2.UI菜单</h4><p><strong>菜单</strong>是一个 UX 控件，它提供一组按钮或不同的 UI 组件。 它可跨用户框架浮动，随时轻松可用。 由于它与人员松散耦合，因此它不再影响用户与目标内容的交互。 <strong>用户可以使用“固定”按钮来锁定&#x2F;解锁菜单</strong>。 可在所选位置抓取菜单，并重定位到所选位置。</p>
+<h3 id="二、创建按钮的静态面板"><a href="#二、创建按钮的静态面板" class="headerlink" title="二、创建按钮的静态面板"></a>二、创建按钮的静态面板</h3><h4 id="1-创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。"><a href="#1-创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。" class="headerlink" title="1.创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。"></a>1.创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231401944.png" alt="image-20230323135610509"></p>
+<h4 id="2-为Buttons添加“GridObjectController”组件"><a href="#2-为Buttons添加“GridObjectController”组件" class="headerlink" title="2.为Buttons添加“GridObjectController”组件"></a>2.为Buttons添加“GridObjectController”组件</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231403553.png" alt="image-20230323140334521"></p>
+<h4 id="3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件："><a href="#3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件：" class="headerlink" title="3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件："></a>3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件：</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231405081.png" alt="image-20230323140550046"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231408110.png" alt="image-20230323140819076"></p>
+<h4 id="4-进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”"><a href="#4-进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”" class="headerlink" title="4.进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”"></a>4.进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231402168.png" alt="image-20230323140205099"></p>
+<h3 id="三、创建跟随用户的动态菜单"><a href="#三、创建跟随用户的动态菜单" class="headerlink" title="三、创建跟随用户的动态菜单"></a>三、创建跟随用户的动态菜单</h3><h4 id="1-添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。"><a href="#1-添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。" class="headerlink" title="1.添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。"></a>1.添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231421973.png" alt="image-20230323142157934"></p>
+<h4 id="2-配置ButtonCollection中的前两个按钮。"><a href="#2-配置ButtonCollection中的前两个按钮。" class="headerlink" title="2.配置ButtonCollection中的前两个按钮。"></a>2.配置ButtonCollection中的前两个按钮。</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231421979.png" alt="image-20230323142146919"></p>
+<h3 id="四、使用场景和工具提示上的文本为对象提供说明"><a href="#四、使用场景和工具提示上的文本为对象提供说明" class="headerlink" title="四、使用场景和工具提示上的文本为对象提供说明"></a>四、使用场景和工具提示上的文本为对象提供说明</h3><h4 id="1-Textmesh-Pro"><a href="#1-Textmesh-Pro" class="headerlink" title="1.Textmesh Pro"></a>1.Textmesh Pro</h4><p>一些 MRTK 资产和预制需要 <strong>TextMesh Pro</strong>。 TextMesh Pro 是 Unity 的<strong>文本组件</strong>。 TextMesh Pro 通过直接更改材料属性来帮助动态更改外观。 TextMesh Pro 使用自定义着色器和高级文本渲染技术来提高视觉质量。 必须通过导入 TMP 基本资源来将 TextMesh Pro 添加到项目中。</p>
+<h4 id="2-工具提示"><a href="#2-工具提示" class="headerlink" title="2.工具提示"></a>2.工具提示</h4><p><strong>工具提示</strong>是与一些其他操作或对象相关的简短说明。 工具提示用于在仔细检查时提供提示或额外的数据。</p>
+<h4 id="3-对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。"><a href="#3-对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。" class="headerlink" title="3.对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。"></a>3.对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231457170.png" alt="image-20230323145705144"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231458584.png" alt="image-20230323145809546"></p>
+<h4 id="4-进入Game模式："><a href="#4-进入Game模式：" class="headerlink" title="4.进入Game模式："></a>4.进入Game模式：</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231459622.png" alt="image-20230323145946432"></p>
+<h3 id="五、使用边界控件操作三维对象"><a href="#五、使用边界控件操作三维对象" class="headerlink" title="五、使用边界控件操作三维对象"></a>五、使用边界控件操作三维对象</h3><h4 id="1-若要使用跟踪手操作和抓取对象，这些对象必须附加以下组件："><a href="#1-若要使用跟踪手操作和抓取对象，这些对象必须附加以下组件：" class="headerlink" title="1.若要使用跟踪手操作和抓取对象，这些对象必须附加以下组件："></a>1.若要使用跟踪手操作和抓取对象，这些对象必须附加以下组件：</h4><ul>
+<li><strong>碰撞体</strong>：碰撞体组件概述了用于身体碰撞的 GameObject 的形式。 不可见的碰撞体不需要与 GameObject 的网格具有完全相同的形式。 在游戏中，网格的粗略近似通常更有效且不可区分。</li>
+<li><strong>对象操控器(脚本)<strong>：ObjectManipulator 脚本能够让对象变得可</strong>移动、可缩放和可旋转</strong>，这些操作可通过一只或两只手来实现。 对象操控器可以配置为操作项目将如何响应大量输入。 </li>
+<li><strong>NearInteractionGrabbable</strong>：NearInteractionGrabbable 组件可帮助你抓取其跟踪手附近的对象。</li>
+</ul>
+<h4 id="2-边界控制"><a href="#2-边界控制" class="headerlink" title="2.边界控制"></a>2.边界控制</h4><p><strong>BoundsControl</strong> 提供了一种简单的功能，用于在混合现实中对对象进行重新建模。 边界控件将在整个全息影像中显示一个<strong>容器</strong>，以表明可以与之交互。 <strong>框的角和边缘的控点将允许缩放、旋转或转换对象。</strong> 边界控件还会对输入做出反应。 例如，在 HoloLens 2 上，边界控件响应手指邻近，提供可见的备注以帮助了解对象中的空间。 所有交互和视觉对象都可以轻松进行自定义。</p>
+<ol start="3">
+<li></li>
+</ol>
+<h4 id="4-进入Game模式根据放置提示可将部件放置到相应的位置。"><a href="#4-进入Game模式根据放置提示可将部件放置到相应的位置。" class="headerlink" title="4.进入Game模式根据放置提示可将部件放置到相应的位置。"></a>4.进入Game模式根据放置提示可将部件放置到相应的位置。</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231515768.png" alt="image-20230323151537652"></p>
+<h4 id="5-添加边界控件"><a href="#5-添加边界控件" class="headerlink" title="5.添加边界控件"></a>5.添加边界控件</h4><ul>
+<li><p>首先在RoverExplorer中添加如下脚本组件，并取消复选框</p>
+<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231643501.png" alt="image-20230323164358400" style="zoom:80%;" />
+</li>
+<li><p>在Menu中重命名第三和第四个按钮，并在各自的Button Config Helper脚本组件中修改OnClick事件来实现是否启用RoverExplorer的组件。</p>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231648455.png" alt="image-20230323164813387"  />
+
+<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231648111.png" alt="image-20230323164832006" style="zoom:80%;" />
+
+<ul>
+<li>进入Game模式，选择菜单中的Enable后便可启用边界控件，选择Disable又可以禁用边界控件。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231658991.png" alt="image-20230323165815889"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/my-second-mr-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -565,7 +662,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
