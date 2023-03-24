@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-24 00:11:57" itemprop="dateModified" datetime="2023-03-24T00:11:57+08:00">2023-03-24</time>
+                <time title="修改时间：2023-03-24 09:51:14" itemprop="dateModified" datetime="2023-03-24T09:51:14+08:00">2023-03-24</time>
               </span>
 
           
@@ -192,61 +192,67 @@
       
           <h2 id="MRTK学习（三）"><a href="#MRTK学习（三）" class="headerlink" title="MRTK学习（三）"></a>MRTK学习（三）</h2><h3 id="一、-按钮和动态菜单面板"><a href="#一、-按钮和动态菜单面板" class="headerlink" title="一、 按钮和动态菜单面板"></a>一、 按钮和动态菜单面板</h3><h6 id="（教程：简介-Training-Microsoft-Learn）"><a href="#（教程：简介-Training-Microsoft-Learn）" class="headerlink" title="（教程：简介 - Training | Microsoft Learn）"></a>（教程：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/training/modules/get-started-with-object-interaction/5-1-introduction">简介 - Training | Microsoft Learn</a>）</h6><h4 id="1-UI按钮"><a href="#1-UI按钮" class="headerlink" title="1.UI按钮"></a>1.UI按钮</h4><p><strong>按钮</strong>可帮助用户触发即时操作。 它是 MRTK 提供的基础组件之一。 根据具体情况，可以使用各种类型的按钮预制。 按钮基于<strong>可交互脚本组件</strong>，在不同的交互式图面上提供平滑的 UI 控件。</p>
 <h4 id="2-UI菜单"><a href="#2-UI菜单" class="headerlink" title="2.UI菜单"></a>2.UI菜单</h4><p><strong>菜单</strong>是一个 UX 控件，它提供一组按钮或不同的 UI 组件。 它可跨用户框架浮动，随时轻松可用。 由于它与人员松散耦合，因此它不再影响用户与目标内容的交互。 <strong>用户可以使用“固定”按钮来锁定&#x2F;解锁菜单</strong>。 可在所选位置抓取菜单，并重定位到所选位置。</p>
-<h3 id="二、创建按钮的静态面板"><a href="#二、创建按钮的静态面板" class="headerlink" title="二、创建按钮的静态面板"></a>二、创建按钮的静态面板</h3><h4 id="1-创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。"><a href="#1-创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。" class="headerlink" title="1.创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。"></a>1.创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231401944.png" alt="image-20230323135610509"></p>
-<h4 id="2-为Buttons添加“GridObjectController”组件"><a href="#2-为Buttons添加“GridObjectController”组件" class="headerlink" title="2.为Buttons添加“GridObjectController”组件"></a>2.为Buttons添加“GridObjectController”组件</h4><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231403553.png" alt="image-20230323140334521" style="zoom:80%;" />
+<h3 id="二、创建按钮的静态面板"><a href="#二、创建按钮的静态面板" class="headerlink" title="二、创建按钮的静态面板"></a>二、创建按钮的静态面板</h3><h4 id="1-创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。"><a href="#1-创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。" class="headerlink" title="1.创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。"></a>1.创建Buttons对象，并从Assets添加“PressableRoundButton”预制，添加三个成为Buttons的子对象。</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240141831.png" alt="image-20230324014140804" style="zoom:80%;" />
 
-<h4 id="3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件："><a href="#3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件：" class="headerlink" title="3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件："></a>3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件：</h4><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231405081.png" alt="image-20230323140550046" style="zoom:80%;" />
-
-
-
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231408110.png" alt="image-20230323140819076" style="zoom:80%;" />
-
-<h4 id="4-进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”"><a href="#4-进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”" class="headerlink" title="4.进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”"></a>4.进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”</h4><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231402168.png" alt="image-20230323140205099" style="zoom:80%;" />
+<h4 id="2-为Buttons添加“GridObjectController”组件"><a href="#2-为Buttons添加“GridObjectController”组件" class="headerlink" title="2.为Buttons添加“GridObjectController”组件"></a>2.为Buttons添加“GridObjectController”组件</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240143060.png" alt="image-20230324014309025" style="zoom:80%;" />
 
 
 
-<h3 id="三、创建跟随用户的动态菜单"><a href="#三、创建跟随用户的动态菜单" class="headerlink" title="三、创建跟随用户的动态菜单"></a>三、创建跟随用户的动态菜单</h3><h4 id="1-添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。"><a href="#1-添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。" class="headerlink" title="1.添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。"></a>1.添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。</h4><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231421973.png" alt="image-20230323142157934" style="zoom:80%;" />
+<h4 id="3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件："><a href="#3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件：" class="headerlink" title="3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件："></a>3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件：</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240945411.png" alt="image-20230324094534279" style="zoom:80%;" />
 
-<h4 id="2-配置ButtonCollection中的前两个按钮。"><a href="#2-配置ButtonCollection中的前两个按钮。" class="headerlink" title="2.配置ButtonCollection中的前两个按钮。"></a>2.配置ButtonCollection中的前两个按钮。</h4><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231421979.png" alt="image-20230323142146919" style="zoom:80%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240945029.png" alt="image-20230324094552985" style="zoom:80%;" />
+
+<h4 id="4-进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”。"><a href="#4-进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”。" class="headerlink" title="4.进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”。"></a>4.进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”。</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240946683.png" alt="image-20230324094615623" style="zoom:80%;" />
+
+
+
+<h3 id="三、创建跟随用户的动态菜单"><a href="#三、创建跟随用户的动态菜单" class="headerlink" title="三、创建跟随用户的动态菜单"></a>三、创建跟随用户的动态菜单</h3><h4 id="1-添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。"><a href="#1-添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。" class="headerlink" title="1.添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。"></a>1.添加菜单预制件“NearMenu4x1”，拖动到Hierarchy中。</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240946984.png" alt="image-20230324094631953" style="zoom:80%;" />
+
+<h4 id="2-配置ButtonCollection中的前两个按钮。"><a href="#2-配置ButtonCollection中的前两个按钮。" class="headerlink" title="2.配置ButtonCollection中的前两个按钮。"></a>2.配置ButtonCollection中的前两个按钮。</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240946948.png" alt="image-20230324094645891" style="zoom:80%;" />
 
 
 
 <h3 id="四、使用场景和工具提示上的文本为对象提供说明"><a href="#四、使用场景和工具提示上的文本为对象提供说明" class="headerlink" title="四、使用场景和工具提示上的文本为对象提供说明"></a>四、使用场景和工具提示上的文本为对象提供说明</h3><h4 id="1-Textmesh-Pro"><a href="#1-Textmesh-Pro" class="headerlink" title="1.Textmesh Pro"></a>1.Textmesh Pro</h4><p>一些 MRTK 资产和预制需要 <strong>TextMesh Pro</strong>。 TextMesh Pro 是 Unity 的<strong>文本组件</strong>。 TextMesh Pro 通过直接更改材料属性来帮助动态更改外观。 TextMesh Pro 使用自定义着色器和高级文本渲染技术来提高视觉质量。 必须通过导入 TMP 基本资源来将 TextMesh Pro 添加到项目中。</p>
 <h4 id="2-工具提示"><a href="#2-工具提示" class="headerlink" title="2.工具提示"></a>2.工具提示</h4><p><strong>工具提示</strong>是与一些其他操作或对象相关的简短说明。 工具提示用于在仔细检查时提供提示或额外的数据。</p>
-<h4 id="3-对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。"><a href="#3-对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。" class="headerlink" title="3.对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。"></a>3.对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231457170.png" alt="image-20230323145705144"></p>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231458584.png" alt="image-20230323145809546" style="zoom:80%;" />
+<h4 id="3-对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。"><a href="#3-对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。" class="headerlink" title="3.对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。"></a>3.对RoverParts的五个子对象添加ToolTipSpawner组件，并在组件中添加预制件和修改相应的ToolTipText。</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240947974.png" alt="image-20230324094725932" style="zoom:80%;" />
 
-<h4 id="4-进入Game模式："><a href="#4-进入Game模式：" class="headerlink" title="4.进入Game模式："></a>4.进入Game模式：</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231459622.png" alt="image-20230323145946432"></p>
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240947712.png" alt="image-20230324094743658" style="zoom:80%;" />
+
+<h4 id="4-进入Game模式："><a href="#4-进入Game模式：" class="headerlink" title="4.进入Game模式："></a>4.进入Game模式：</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240948027.png" alt="image-20230324094804969" style="zoom:80%;" />
+
+
+
 <h3 id="五、使用边界控件操作三维对象"><a href="#五、使用边界控件操作三维对象" class="headerlink" title="五、使用边界控件操作三维对象"></a>五、使用边界控件操作三维对象</h3><h4 id="1-若要使用跟踪手操作和抓取对象，这些对象必须附加以下组件："><a href="#1-若要使用跟踪手操作和抓取对象，这些对象必须附加以下组件：" class="headerlink" title="1.若要使用跟踪手操作和抓取对象，这些对象必须附加以下组件："></a>1.若要使用跟踪手操作和抓取对象，这些对象必须附加以下组件：</h4><ul>
 <li><strong>碰撞体</strong>：碰撞体组件概述了用于身体碰撞的 GameObject 的形式。 不可见的碰撞体不需要与 GameObject 的网格具有完全相同的形式。 在游戏中，网格的粗略近似通常更有效且不可区分。</li>
 <li><strong>对象操控器(脚本)<strong>：ObjectManipulator 脚本能够让对象变得可</strong>移动、可缩放和可旋转</strong>，这些操作可通过一只或两只手来实现。 对象操控器可以配置为操作项目将如何响应大量输入。 </li>
 <li><strong>NearInteractionGrabbable</strong>：NearInteractionGrabbable 组件可帮助你抓取其跟踪手附近的对象。</li>
 </ul>
 <h4 id="2-边界控制"><a href="#2-边界控制" class="headerlink" title="2.边界控制"></a>2.边界控制</h4><p><strong>BoundsControl</strong> 提供了一种简单的功能，用于在混合现实中对对象进行重新建模。 边界控件将在整个全息影像中显示一个<strong>容器</strong>，以表明可以与之交互。 <strong>框的角和边缘的控点将允许缩放、旋转或转换对象。</strong> 边界控件还会对输入做出反应。 例如，在 HoloLens 2 上，边界控件响应手指邻近，提供可见的备注以帮助了解对象中的空间。 所有交互和视觉对象都可以轻松进行自定义。</p>
-<h4 id="3-给RoverAssembly和RoverParts的五个子对象添加以下组件并进行修改相应配置："><a href="#3-给RoverAssembly和RoverParts的五个子对象添加以下组件并进行修改相应配置：" class="headerlink" title="3.给RoverAssembly和RoverParts的五个子对象添加以下组件并进行修改相应配置："></a>3.给RoverAssembly和RoverParts的五个子对象添加以下组件并进行修改相应配置：</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231707197.png" alt="image-20230323170222850"></p>
-<h4 id="4-进入Game模式根据放置提示可将部件放置到相应的位置。"><a href="#4-进入Game模式根据放置提示可将部件放置到相应的位置。" class="headerlink" title="4.进入Game模式根据放置提示可将部件放置到相应的位置。"></a>4.进入Game模式根据放置提示可将部件放置到相应的位置。</h4><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231515768.png" alt="image-20230323151537652" style="zoom:80%;" />
+<h4 id="3-给RoverAssembly和RoverParts的五个子对象添加以下组件并进行修改相应配置："><a href="#3-给RoverAssembly和RoverParts的五个子对象添加以下组件并进行修改相应配置：" class="headerlink" title="3.给RoverAssembly和RoverParts的五个子对象添加以下组件并进行修改相应配置："></a>3.给RoverAssembly和RoverParts的五个子对象添加以下组件并进行修改相应配置：</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240948471.png" alt="image-20230324094823439" style="zoom:80%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231708930.png" alt="image-20230323170844875" style="zoom:80%;" />
+<h4 id="4-进入Game模式根据放置提示可将部件放置到相应的位置。"><a href="#4-进入Game模式根据放置提示可将部件放置到相应的位置。" class="headerlink" title="4.进入Game模式根据放置提示可将部件放置到相应的位置。"></a>4.进入Game模式根据放置提示可将部件放置到相应的位置。</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240948627.png" alt="image-20230324094842578" style="zoom:80%;" />
+
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240948552.png" alt="image-20230324094853517" style="zoom:80%;" />
 
 
 
 <h4 id="5-添加边界控件"><a href="#5-添加边界控件" class="headerlink" title="5.添加边界控件"></a>5.添加边界控件</h4><ul>
 <li><p>首先在RoverExplorer中添加如下脚本组件，并取消复选框</p>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231643501.png" alt="image-20230323164358400" style="zoom:80%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240949600.png" alt="image-20230324094917570" style="zoom:80%;" />
 </li>
 <li><p>在Menu中重命名第三和第四个按钮，并在各自的Button Config Helper脚本组件中修改OnClick事件来实现是否启用RoverExplorer的组件。</p>
 </li>
 </ul>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231648455.png" alt="image-20230323164813387"  />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240949650.png" alt="image-20230324094941604" style="zoom:80%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231648111.png" alt="image-20230323164832006" style="zoom:80%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240949091.png" alt="image-20230324094952057" style="zoom:80%;" />
+
+
 
 <ul>
 <li>进入Game模式，选择菜单中的Enable后便可启用边界控件，选择Disable又可以禁用边界控件。</li>
 </ul>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231658991.png" alt="image-20230323165815889" style="zoom:80%;" />
-
-
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240950121.png" alt="image-20230324095018062" style="zoom:80%;" />
 
 
       
@@ -298,7 +304,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-24 00:41:07" itemprop="dateModified" datetime="2023-03-24T00:41:07+08:00">2023-03-24</time>
+                <time title="修改时间：2023-03-24 09:59:56" itemprop="dateModified" datetime="2023-03-24T09:59:56+08:00">2023-03-24</time>
               </span>
 
           
@@ -313,12 +319,15 @@
 
       
           <h2 id="MRTK学习（二）"><a href="#MRTK学习（二）" class="headerlink" title="MRTK学习（二）"></a>MRTK学习（二）</h2><h3 id="一、-放置游戏对象并设置可见性"><a href="#一、-放置游戏对象并设置可见性" class="headerlink" title="一、 放置游戏对象并设置可见性"></a>一、 放置游戏对象并设置可见性</h3><h6 id="（教程：练习-放置游戏对象并设置可见性-Training-Microsoft-Learn）"><a href="#（教程：练习-放置游戏对象并设置可见性-Training-Microsoft-Learn）" class="headerlink" title="（教程：练习 - 放置游戏对象并设置可见性 - Training | Microsoft Learn）"></a>（教程：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/training/modules/place-scene-objects/4-3-exercise-position-game-objects-set-visibility">练习 - 放置游戏对象并设置可见性 - Training | Microsoft Learn</a>）</h6><h4 id="1-导入Unity包"><a href="#1-导入Unity包" class="headerlink" title="1.导入Unity包"></a>1.导入Unity包</h4><p>此处先下载以下 <strong>Unity 自定义包</strong></p>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222128554.png" alt="image-20230322212821510" style="zoom: 67%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240957209.png" alt="image-20230324095711165" style="zoom:80%;" />
 
 
 
-<h4 id="2-创建父对象"><a href="#2-创建父对象" class="headerlink" title="2.创建父对象"></a>2.创建父对象</h4><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222140962.png" alt="image-20230322214017939"></p>
-<h4 id="3-添加教程预制件"><a href="#3-添加教程预制件" class="headerlink" title="3.添加教程预制件"></a>3.添加教程预制件</h4><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222143389.png" alt="image-20230322214346312" style="zoom:80%;" />
+<h4 id="2-创建父对象"><a href="#2-创建父对象" class="headerlink" title="2.创建父对象"></a>2.创建父对象</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240957693.png" alt="image-20230324095735670" style="zoom:80%;" />
+
+
+
+<h4 id="3-添加教程预制件"><a href="#3-添加教程预制件" class="headerlink" title="3.添加教程预制件"></a>3.添加教程预制件</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240957478.png" alt="image-20230324095748439" style="zoom:80%;" />
 
 
 
@@ -327,7 +336,7 @@
 <h4 id="2-散点对象集合"><a href="#2-散点对象集合" class="headerlink" title="2.散点对象集合"></a>2.散点对象集合</h4><p>​		此类型的集合只是在<strong>半径内随机布局</strong>的一组子对象。</p>
 <h4 id="3-图块网格对象集合"><a href="#3-图块网格对象集合" class="headerlink" title="3.图块网格对象集合"></a>3.图块网格对象集合</h4><p>​		可以利用这种类型的集合在<strong>基本网格布局中放置大小一致的游戏对象</strong>。</p>
 <h4 id="4-练习使用集合组织和布局对象"><a href="#4-练习使用集合组织和布局对象" class="headerlink" title="4.练习使用集合组织和布局对象"></a>4.练习使用集合组织和布局对象</h4><p>​		添加了<strong>GridObjectCollection</strong>组件，并Update Collection。</p>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222154146.png" alt="image-20230322215445037" style="zoom:80%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240958031.png" alt="image-20230324095808995" style="zoom:80%;" />
 
 
 
@@ -340,19 +349,36 @@
 <h4 id="2-练习使用方向指示器求解器"><a href="#2-练习使用方向指示器求解器" class="headerlink" title="2.练习使用方向指示器求解器"></a>2.练习使用方向指示器求解器</h4><h5 id="1-添加的组件："><a href="#1-添加的组件：" class="headerlink" title="1.添加的组件："></a>1.添加的组件：</h5><ul>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/mixed-reality/mrtk-unity/mrtk2/features/ux-building-blocks/solvers/solver?view=mrtkunity-2022-05#directionalindicator"><code>DirectionalIndicator</code></a>：确定作为方向指示器的对象的位置和方向。 从 SolverHandler 跟踪目标的参照点来看，此指示器将面向提供的 DirectionalTarget。</li>
 </ul>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222208775.png" style="zoom:80%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240958401.png" alt="image-20230324095824349" style="zoom:80%;" />
 
 
 
-<h5 id="2-进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。"><a href="#2-进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。" class="headerlink" title="2.进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。"></a>2.进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。</h5><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222211708.png" alt="image-20230322221106615" style="zoom:80%;" />
+<h5 id="2-进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。"><a href="#2-进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。" class="headerlink" title="2.进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。"></a>2.进入Game模式，按住鼠标右键旋转方向，当视线从RoverExplorer对象移开时，Indicator对象将出现并指向RoverExplorer对象。</h5><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240958163.png" alt="image-20230324095834122" style="zoom:80%;" />
+
+
 
 
 
 <h4 id="3-练习使用点击以放置求解器"><a href="#3-练习使用点击以放置求解器" class="headerlink" title="3.练习使用点击以放置求解器"></a>3.练习使用点击以放置求解器</h4><h5 id="1-点击以放置"><a href="#1-点击以放置" class="headerlink" title="1.点击以放置"></a>1.点击以放置</h5><p>​		<strong>“点击以放置”</strong>是一个远距离交互组件，用于将游戏对象放置在表面上。 此组件适用于将对象放置在空间网格上。 “点击以放置”使用<strong>两个单击和头部运动的组合</strong>来放置对象。 一个单击用于开始放置，头部运动用于控制对象的位置，另一个单击用于将对象放置在场景中。</p>
-<h5 id="2-对RoverAssembly进行相关配置"><a href="#2-对RoverAssembly进行相关配置" class="headerlink" title="2.对RoverAssembly进行相关配置"></a>2.对RoverAssembly进行相关配置</h5><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231130653.png" alt="image-20230323113029615"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231130791.png" alt="image-20230323113044758"></p>
+<h5 id="2-对RoverAssembly进行相关配置"><a href="#2-对RoverAssembly进行相关配置" class="headerlink" title="2.对RoverAssembly进行相关配置"></a>2.对RoverAssembly进行相关配置</h5><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240958839.png" alt="image-20230324095846789" style="zoom:80%;" />
+
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240959584.png" alt="image-20230324095900536" style="zoom:80%;" />
+
+
+
 <h5 id="3-进入Game模式。"><a href="#3-进入Game模式。" class="headerlink" title="3.进入Game模式。"></a>3.进入Game模式。</h5><p>​		利用<strong>鼠标右键</strong>将视线对准”RoverAssembly”后，单<strong>击鼠标左键</strong>，然后继续点击<strong>鼠标右键</strong>继续移动视线，找到自己满意的位置后，再<strong>次单击鼠标左键</strong>进行放置，至此完成。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303231129636.png" alt="image-20230323112900480"></p>
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240959372.png" alt="image-20230324095917324" style="zoom:80%;" />
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
@@ -403,7 +429,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-24 00:45:32" itemprop="dateModified" datetime="2023-03-24T00:45:32+08:00">2023-03-24</time>
+                <time title="修改时间：2023-03-24 10:02:06" itemprop="dateModified" datetime="2023-03-24T10:02:06+08:00">2023-03-24</time>
               </span>
 
           
@@ -421,28 +447,29 @@
 <li>混合现实工具包 (MRTK) 是用于构建虚拟现实 (VR) 和增强现实 (AR) 的混合现实体验的跨平台工具包。能够凭此创建一种混合现实体验，在其中用户能够移动、旋转和缩放全息对象。</li>
 </ul>
 <h3 id="二、为-Windows-Mixed-Reality-配置-Unity"><a href="#二、为-Windows-Mixed-Reality-配置-Unity" class="headerlink" title="二、为 Windows Mixed Reality 配置 Unity"></a>二、为 Windows Mixed Reality 配置 Unity</h3><ul>
-<li><h5 id="首先在Unity-Hub中创建3D-Core项目，并取名为”MRTK-Tutorial“。"><a href="#首先在Unity-Hub中创建3D-Core项目，并取名为”MRTK-Tutorial“。" class="headerlink" title="首先在Unity Hub中创建3D Core项目，并取名为”MRTK Tutorial“。"></a>首先在Unity Hub中创建3D Core项目，并取名为”MRTK Tutorial“。</h5></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/image-20230322194400327.png" alt="image-20230322194400327"></p>
-<ul>
+<li><h5 id="首先在Unity-Hub中创建3D-Core项目，并取名为”MRTK-Tutorial“。"><a href="#首先在Unity-Hub中创建3D-Core项目，并取名为”MRTK-Tutorial“。" class="headerlink" title="首先在Unity Hub中创建3D Core项目，并取名为”MRTK Tutorial“。"></a>首先在Unity Hub中创建3D Core项目，并取名为”MRTK Tutorial“。</h5><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303241000503.png" alt="image-20230324100010475" style="zoom:80%;" />
+</li>
 <li><h5 id="切换生成平台，切换成”Universal-Windows-Platform“。"><a href="#切换生成平台，切换成”Universal-Windows-Platform“。" class="headerlink" title="切换生成平台，切换成”Universal Windows Platform“。"></a>切换生成平台，切换成”Universal Windows Platform“。</h5></li>
 </ul>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/image-20230322194418280.png" alt="image-20230322194418280" style="zoom: 80%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303241000675.png" alt="image-20230324100033626" style="zoom:80%;" />
 
 
 
 <h3 id="三、导入和配置资源"><a href="#三、导入和配置资源" class="headerlink" title="三、导入和配置资源"></a>三、导入和配置资源</h3><ul>
 <li><h5 id="导入-MRTK-Unity-基础包。从-Microsoft-下载中心下载混合现实功能工具的最新版本。"><a href="#导入-MRTK-Unity-基础包。从-Microsoft-下载中心下载混合现实功能工具的最新版本。" class="headerlink" title="导入 MRTK Unity 基础包。从 Microsoft 下载中心下载混合现实功能工具的最新版本。"></a>导入 MRTK Unity 基础包。从 <a target="_blank" rel="noopener" href="https://aka.ms/MRFeatureTool">Microsoft 下载中心</a>下载混合现实功能工具的最新版本。</h5></li>
 </ul>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/image-20230322195906736.png" alt="image-20230322195906736" style="zoom:50%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303241000246.png" alt="image-20230324100042205" style="zoom:80%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/image-20230322195650631.png" alt="image-20230322195650631" style="zoom:50%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303241000650.png" alt="image-20230324100049604" style="zoom:80%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/image-20230322200011682.png" alt="image-20230322200011682" style="zoom:50%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303241000049.png" alt="image-20230324100056004" style="zoom:80%;" />
 
 
 
-<h3 id="四、完成为Unity配置项目"><a href="#四、完成为Unity配置项目" class="headerlink" title="四、完成为Unity配置项目"></a>四、完成为Unity配置项目</h3><p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/image-20230322202530343.png" alt="image-20230322202530343"></p>
+<h3 id="四、完成为Unity配置项目"><a href="#四、完成为Unity配置项目" class="headerlink" title="四、完成为Unity配置项目"></a>四、完成为Unity配置项目</h3><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303241001175.png" alt="image-20230324100105117" style="zoom:80%;" />
+
+
+
 <h3 id="五、交互模型"><a href="#五、交互模型" class="headerlink" title="五、交互模型"></a>五、交互模型</h3><p>​     有三种主要的交互模型适合大多数混合现实体验。</p>
 <ul>
 <li><h4 id="手部和运动控制器模型"><a href="#手部和运动控制器模型" class="headerlink" title="手部和运动控制器模型"></a><strong>手部和运动控制器模型</strong></h4><p>手部和运动控制器模型要求用户使用一只或两只手与全息影像交互。</p>
@@ -467,11 +494,12 @@
 </ul>
 <p>​        <u>ObjectManipulator</u> 是操控行为的新组件。使用 ObjectManipulator 脚本可以通过单手或双手来移动、缩放和旋转对象。 可以配置对象操控器来控制对象响应各种输入的方式。（另外，确保向对象添加一个与其可抓取边界匹配的<u>碰撞体</u>。）</p>
 <p>​         为使对象能够响应近距关节手输入，还需要添加 <u>NearInteractionGrabbable</u>脚本。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/image-20230322210230633.png" alt="image-20230322210230633"></p>
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303241001825.png" alt="image-20230324100116791" style="zoom:80%;" />
+
 <ul>
 <li><h4 id="点击运行在Game窗口中进行模拟"><a href="#点击运行在Game窗口中进行模拟" class="headerlink" title="点击运行在Game窗口中进行模拟"></a>点击运行在Game窗口中进行模拟</h4></li>
 </ul>
-<img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/image-20230322204206658.png" alt="image-20230322204206658" style="zoom:50%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303241001215.png" alt="image-20230324100123171" style="zoom:80%;" />
 
 
 
@@ -483,7 +511,20 @@
 <h4 id="持久的手："><a href="#持久的手：" class="headerlink" title="持久的手："></a><strong>持久的手</strong>：</h4><ul>
 <li>要在不继续按住某个键的情况下启用手并使它在屏幕上，请按 T（左手）或 Y（右手）。 再次按这些键可移除手。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/XueliWind/blog_pictures@master/202303222112157.png" alt="image-20230322211218045"></p>
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303241001517.png" alt="image-20230324100136456" style="zoom:80%;" />
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
