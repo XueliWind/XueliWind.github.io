@@ -145,6 +145,321 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/05/my-unity-blog1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/05/my-unity-blog1/" class="post-title-link" itemprop="url">my-unity-blog1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-04-05 15:38:46 / 修改时间：19:05:42" itemprop="dateCreated datePublished" datetime="2023-04-05T15:38:46+08:00">2023-04-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Unity3d学习（一）"><a href="#Unity3d学习（一）" class="headerlink" title="Unity3d学习（一）"></a>Unity3d学习（一）</h2><h3 id="一、导航网格代理-NavMesh-Agent"><a href="#一、导航网格代理-NavMesh-Agent" class="headerlink" title="一、导航网格代理 (NavMesh Agent)"></a>一、导航网格代理 (NavMesh Agent)</h3><p>NavMeshAgent 组件可帮助您创建在朝目标移动时能够彼此避开的角色。代理 (Agent) 使用导航网格来推断游戏世界，并知道如何避开彼此以及其他移动障碍物。寻路和空间推断是使用导航网格代理的脚本 API 进行处理的。</p>
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202304051540670.png" alt="image-20230405154011566" style="zoom:80%;" />
+
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>Agent Size</em></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>Radius</strong></td>
+<td align="left">代理的半径，用于计算障碍物与其他代理之间的碰撞。</td>
+</tr>
+<tr>
+<td align="left"><strong>Height</strong></td>
+<td align="left">代理通过头顶障碍物时所需的高度间隙。</td>
+</tr>
+<tr>
+<td align="left"><strong>Base offset</strong></td>
+<td align="left">碰撞圆柱体相对于变换轴心点的偏移。</td>
+</tr>
+<tr>
+<td align="left"><em>Steering</em></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>Speed</strong></td>
+<td align="left">最大移动速度（以世界单位&#x2F;秒表示）。</td>
+</tr>
+<tr>
+<td align="left"><strong>Angular Speed</strong></td>
+<td align="left">最大旋转速度（度&#x2F;秒）。</td>
+</tr>
+<tr>
+<td align="left"><strong>Acceleration</strong></td>
+<td align="left">最大加速度（以世界单位&#x2F;平方秒表示）。</td>
+</tr>
+<tr>
+<td align="left"><strong>Stopping distance</strong></td>
+<td align="left">当靠近目标位置的距离达到此值时，代理将停止。</td>
+</tr>
+<tr>
+<td align="left"><strong>Auto Braking</strong></td>
+<td align="left">启用此属性后，代理在到达目标时将减速。对于巡逻等行为（这种情况下，代理应在多个点之间平滑移动）应禁用此属性</td>
+</tr>
+<tr>
+<td align="left"><em>Obstacle Avoidance</em></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>Quality</strong></td>
+<td align="left">障碍躲避质量。如果拥有大量代理，则可以通过降低障碍躲避质量来节省 CPU 时间。如果将躲避设置为无，则只会解析碰撞，而不会尝试主动躲避其他代理和障碍物。</td>
+</tr>
+<tr>
+<td align="left"><strong>Priority</strong></td>
+<td align="left">执行避障时，此代理将忽略优先级较低的代理。该值应在 0–99 范围内，其中较低的数字表示较高的优先级。</td>
+</tr>
+<tr>
+<td align="left"><em>Path Finding</em></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>Auto Traverse OffMesh Link</strong></td>
+<td align="left">设置为 true 可自动遍历网格外链接 (Off-Mesh Link)。如果要使用动画或某种特定方式遍历网格外链接，则应关闭此功能。</td>
+</tr>
+<tr>
+<td align="left"><strong>Auto Repath</strong></td>
+<td align="left">启用此属性后，代理将在到达部分路径末尾时尝试再次寻路。当没有到达目标的路径时，将生成一条部分路径通向与目标最近的可达位置。</td>
+</tr>
+<tr>
+<td align="left"><strong>Area Mask</strong></td>
+<td align="left">Area Mask 描述了代理在寻路时将考虑的<a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2020.3/Manual/nav-AreasAndCosts.html">区域类型</a>。在准备网格进行导航网格烘焙时，可设置每个网格区域类型。例如，可将楼梯标记为特殊区域类型，并禁止某些角色类型使用楼梯。</td>
+</tr>
+</tbody></table>
+<h3 id="二、Transform"><a href="#二、Transform" class="headerlink" title="二、Transform"></a>二、Transform</h3><h4 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h4><p>对象的位置、旋转和缩放。</p>
+<p>场景中的每个对象都有一个变换。 它用于存储和操作对象的位置、旋转和缩放。 每个变换都可以有一个父级，让您能够分层应用位置、旋转和缩放。这是“Hierarchy”面板中显示的层级视图。 它们还支持枚举器，因此您可以使用以下方式遍历子项：</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><table>
+<thead>
+<tr>
+<th><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-childCount.html">childCount</a></th>
+<th>父变换具有的子项数。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-eulerAngles.html">eulerAngles</a></td>
+<td>以欧拉角表示的旋转（以度为单位）。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-forward.html">forward</a></td>
+<td>返回一个标准化矢量，它表示世界空间中变换的蓝轴。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-hasChanged.html">hasChanged</a></td>
+<td>自上次将标志设置为“false”以来，变换是否发生更改？</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-hierarchyCapacity.html">hierarchyCapacity</a></td>
+<td>变换的层级视图数据结构的变换容量。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-hierarchyCount.html">hierarchyCount</a></td>
+<td>变换的层级视图数据结构中变换的数量。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-localEulerAngles.html">localEulerAngles</a></td>
+<td>以欧拉角表示的相对于父变换旋转的旋转（以度为单位）。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-localPosition.html">localPosition</a></td>
+<td>相对于父变换的变换位置。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-localRotation.html">localRotation</a></td>
+<td>相对于父级变换旋转的变换旋转。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-localScale.html">localScale</a></td>
+<td>相对于 GameObjects 父对象的变换缩放。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-localToWorldMatrix.html">localToWorldMatrix</a></td>
+<td>将点从本地空间转换到世界空间的矩阵（只读）。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-lossyScale.html">lossyScale</a></td>
+<td>对象的全局缩放。（只读）</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-parent.html">parent</a></td>
+<td>变换的父级。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-position.html">position</a></td>
+<td>世界空间中的变换位置。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-right.html">right</a></td>
+<td>世界空间中变换的红轴。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-root.html">root</a></td>
+<td>返回层级视图中最顶层的变换。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-rotation.html">rotation</a></td>
+<td>一个 Quaternion，用于存储变换在世界空间中的旋转。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-up.html">up</a></td>
+<td>世界空间中变换的绿轴。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Transform-worldToLocalMatrix.html">worldToLocalMatrix</a></td>
+<td>将点从世界空间转换到本地空间的矩阵（只读）</td>
+</tr>
+</tbody></table>
+<h3 id="三、Quaternion"><a href="#三、Quaternion" class="headerlink" title="三、Quaternion"></a>三、Quaternion</h3><h4 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h4><p>Unity 使用 <strong>Quaternion 类来存储游戏对象的三维方向</strong>，也使用它们来描述从一个方向到另一个方向的相对旋转。</p>
+<p>此页面概述 Quaternion 类及其在脚本编写中的常见用法。有关 Quaternion 类的每个成员的详尽参考，请参阅 <a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2021.3/ScriptReference/Quaternion.html">Quaternion 脚本参考</a>。</p>
+<p>了解欧拉角（在检查器中看到的用于游戏对象旋转的 X、Y、Z 值），以及 Unity 用于存储游戏对象实际旋转的基础 Quaternion 值。有关本主题的基础知识，请阅读 <a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2021.3/Manual/QuaternionAndEulerRotationsInUnity.html">Unity 中的旋转和方向</a>.</p>
+<h3 id="四、Vector3-sqrMagnitude"><a href="#四、Vector3-sqrMagnitude" class="headerlink" title="四、Vector3.sqrMagnitude"></a>四、<a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Vector3.html">Vector3</a>.sqrMagnitude</h3><h4 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a>描述</h4><p>返回该向量的平方长度。（只读）</p>
+<p>向量 <code>v</code> 的大小以 Mathf.Sqrt(Vector3.Dot(v, v)) 方式进行计算。 但是，Sqrt 计算相当复杂， 执行时间比普通算术运算要长。 计算平方数代替使用 <a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/Vector3-magnitude.html">magnitude</a> 属性要快得多 - 计算基本相同<strong>，只是消除了执行缓慢的 Sqrt 调用</strong>。 如果您只将大小用于比较距离的目的，则也可以将平方数与距离的平方进行比较， 因为这种比较也会给出相同的结果。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/24/my-fourth-mr-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/24/my-fourth-mr-blog/" class="post-title-link" itemprop="url">my-fourth-mr-blog</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-24 15:53:58 / 修改时间：21:05:23" itemprop="dateCreated datePublished" datetime="2023-03-24T15:53:58+08:00">2023-03-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="MRTK学习（四）"><a href="#MRTK学习（四）" class="headerlink" title="MRTK学习（四）"></a>MRTK学习（四）</h2><h3 id="一、-在注视提供程序中启用基于眼睛的注视"><a href="#一、-在注视提供程序中启用基于眼睛的注视" class="headerlink" title="一、 在注视提供程序中启用基于眼睛的注视"></a>一、 在注视提供程序中启用基于眼睛的注视</h3><h6 id="（教程：简介-Training-Microsoft-Learn）"><a href="#（教程：简介-Training-Microsoft-Learn）" class="headerlink" title="（教程：简介 - Training | Microsoft Learn）"></a>（教程：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/training/modules/use-eye-tracking-voice-commands/6-1-introduction">简介 - Training | Microsoft Learn</a>）</h6><p>1.在MixedRealityToolkit中进行克隆：</p>
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303242021859.png" alt="image-20230324202026491" style="zoom:80%;" />
+
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303242021837.png" alt="image-20230324202050212" style="zoom:80%;" />
+
+
+
+<p>二、为 Unity 编辑器启用模拟的目视跟踪</p>
+<p>1.选择 “MixedRealityToolkit” 对象</p>
+<ul>
+<li>克隆DefaultMixedRealityInputSimulationProfile</li>
+</ul>
+<p><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303242033664.png" alt="image-20230324203328636"></p>
+<ul>
+<li>将如下配置设置为Camera Forward Axis</li>
+</ul>
+<p><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303242034530.png" alt="image-20230324203452507"></p>
+<p>三、向对象添加目视跟踪</p>
+<ol>
+<li></li>
+</ol>
+<p><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303242101935.png" alt="image-20230324210114907"></p>
+<p><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303242101734.png" alt="image-20230324210127700"></p>
+<p>四、使用语音命令</p>
+<p>1.解释：</p>
+<p>语音输入提供程序（如 Windows 语音输入）不创建任何控制器；但作为替代方法，它可帮助你概括关键短语（在系统识别出后）以改进语音输入事件。 可在输入系统配置文件中的语音命令配置文件中配置要识别的关键短语。 对于每个命令，还可以：</p>
+<ul>
+<li>选择要将命令映射到的输入操作。 例如，可以通过这种方式使用关键字 select 来达到与单击鼠标左键相同的效果，方法是将这两项操作映射到同一操作。</li>
+<li>指定在按下时将生成相同语音事件的键控代码。</li>
+<li>添加一个本地化键，将其在 UWP 应用中用于从应用资源中获取本地化关键字。</li>
+</ul>
+<p>2.语音输入的优点：</p>
+<p>语音输入是传达我们意图的自然方式。 语音非常适合用于接口遍历，因为可以帮助用户快速执行接口的多个步骤。 在查看某个网页时，用户可以说“返回”，而无需向上并点击应用中的后退按钮。 </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/my-thrid-mr-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -176,7 +491,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-24 09:51:14" itemprop="dateModified" datetime="2023-03-24T09:51:14+08:00">2023-03-24</time>
+                <time title="修改时间：2023-03-24 15:26:19" itemprop="dateModified" datetime="2023-03-24T15:26:19+08:00">2023-03-24</time>
               </span>
 
           
@@ -198,9 +513,9 @@
 
 
 
-<h4 id="3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件："><a href="#3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件：" class="headerlink" title="3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件："></a>3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件：</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240945411.png" alt="image-20230324094534279" style="zoom:80%;" />
+<h4 id="3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件："><a href="#3-按钮改名后，为hints和explode按钮分别对其配置“Interactable-OnClick-”事件：" class="headerlink" title="3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件："></a>3.按钮改名后，为hints和explode按钮分别对其配置“Interactable.OnClick ()”事件：</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240945411.png" alt="image-20230324094534279" style="zoom: 67%;" />
 
-<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240945029.png" alt="image-20230324094552985" style="zoom:80%;" />
+<img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240945029.png" alt="image-20230324094552985" style="zoom: 67%;" />
 
 <h4 id="4-进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”。"><a href="#4-进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”。" class="headerlink" title="4.进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”。"></a>4.进入Game模式。按空格激活手部，随后使用鼠标按“Hints”和“Explode”。</h4><img src="https://cdn.staticaly.com/gh/XueliWind/blog_pictures@master/202303240946683.png" alt="image-20230324094615623" style="zoom:80%;" />
 
@@ -752,7 +1067,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
